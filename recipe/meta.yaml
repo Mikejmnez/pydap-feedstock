@@ -1,6 +1,6 @@
 {% set name = "pydap" %}
-{% set version = "3.5.9" %}
-{% set python_min = "3.10" %}
+{% set version = "3.5.10" %}
+{% set python_min = "3.12" %}
 
 # handle undefined PYTHON in `noarch: python` outputs
 {% if PYTHON is not defined %}{% set PYTHON = "$PYTHON" %}{% endif %}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pydap-{{ version }}.tar.gz
-  sha256: 42c9739d82b182ac96c92df455fba288452966105c1b89f97cf37bbc0ff4bf0e
+  sha256: 3c7047e5ff8cda18c65e356875ff3c1ae5966e4a71a9f8ea6558385252266fc1
 
 build:
   noarch: python
@@ -34,7 +34,7 @@ outputs:
         - requests
         - requests-cache
         - scipy
-        - webob
+        - webob >=1.8.10
         - beautifulsoup4
         - lxml
         # optional, server, but required to pass the import test
