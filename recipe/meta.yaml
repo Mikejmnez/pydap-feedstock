@@ -1,6 +1,6 @@
 {% set name = "pydap" %}
 {% set version = "3.5.10" %}
-{% set python_min = "3.10" %}
+{% set python_min = "3.12" %}
 
 # handle undefined PYTHON in `noarch: python` outputs
 {% if PYTHON is not defined %}{% set PYTHON = "$PYTHON" %}{% endif %}
@@ -34,7 +34,7 @@ outputs:
         - requests
         - requests-cache
         - scipy
-        - webob
+        - webob >=1.8.10
         - beautifulsoup4
         - lxml
         # optional, server, but required to pass the import test
